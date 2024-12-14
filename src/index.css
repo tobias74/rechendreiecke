@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transition-fill {
+    transition: fill 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.correct {
+    filter: drop-shadow(0 0 10px #32CD32); /* Green glow */
+}
+
+input:disabled {
+    color: #1A1A1A !important; /* Force consistent text color for disabled inputs */
+    -webkit-text-fill-color: #1A1A1A !important; /* Force consistent text color for disabled inputs */
+    opacity: 1; /* Remove browser default opacity changes for disabled inputs */
+}
