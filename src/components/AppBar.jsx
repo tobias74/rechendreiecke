@@ -9,7 +9,7 @@ export default function AppBar() {
       {/* Logo */}
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          My App
+          Rechendreiecke
         </Link>
       </div>
 
@@ -17,10 +17,10 @@ export default function AppBar() {
       <div className="hidden md:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/data-privacy">Datenschutzerklärung</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/imprint">Impressum</Link>
           </li>
         </ul>
       </div>

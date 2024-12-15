@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './routes/Home';
-import About from './routes/About';
 import AppBar from './components/AppBar';
+import Imprint from './routes/Imprint';
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       {/* Define Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/imprint" element={<Imprint />} />
       </Routes>
     </div>
   );
