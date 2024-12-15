@@ -1,6 +1,6 @@
 import { TRIANGLE_BASE_LINE_LENGTH } from "../utils/rechendreieckUtils";
 
-export default function InsideInput({
+export default function DreieckInput({
     x,
     y,
     placeholder,

@@ -1,7 +1,6 @@
 // Rechendreieck.js
 import React, { useEffect, useState } from "react";
-import InsideInput from "./InsideInput";
-import OutsideInput from "./OutsideInput";
+import DreieckInput from "./DreieckInput";
 import ConfettiEffect from "./ConfettiEffect";
 import {
     calculateVertices,
@@ -102,21 +101,21 @@ export default function Rechendreieck({
                 <line x1={midLeft.x} y1={midLeft.y} x2={centroid.x} y2={centroid.y} stroke="#000" strokeWidth="2" />
 
                 {/* Inside Inputs */}
-                <InsideInput
+                <DreieckInput
                     x={centroid.x + inputOffsets.topInside.x}
                     y={centroid.y + inputOffsets.topInside.y}
                     placeholder={values.inside[0] ?? "?"}
                     onChange={(e) => handleInputChange("inside", 0, e.target.value)}
                     disabled={values.isPreset.inside[0] || isCorrect}
                 />
-                <InsideInput
+                <DreieckInput
                     x={centroid.x + inputOffsets.bottomLeftInside.x}
                     y={centroid.y + inputOffsets.bottomLeftInside.y}
                     placeholder={values.inside[1] ?? "?"}
                     onChange={(e) => handleInputChange("inside", 1, e.target.value)}
                     disabled={values.isPreset.inside[1] || isCorrect}
                 />
-                <InsideInput
+                <DreieckInput
                     x={centroid.x + inputOffsets.bottomRightInside.x}
                     y={centroid.y + inputOffsets.bottomRightInside.y}
                     placeholder={values.inside[2] ?? "?"}
@@ -125,21 +124,21 @@ export default function Rechendreieck({
                 />
 
                 {/* Outside Inputs */}
-                <OutsideInput
+                <DreieckInput
                     x={midBottom.x + inputOffsets.bottomOutside.x}
                     y={midBottom.y + inputOffsets.bottomOutside.y}
                     placeholder={values.outside[0] ?? "?"}
                     onChange={(e) => handleInputChange("outside", 0, e.target.value)}
                     disabled={values.isPreset.outside[0] || isCorrect}
                 />
-                <OutsideInput
+                <DreieckInput
                     x={midLeft.x + inputOffsets.topLeftOutside.x}
                     y={midLeft.y + inputOffsets.topLeftOutside.y}
                     placeholder={values.outside[1] ?? "?"}
                     onChange={(e) => handleInputChange("outside", 1, e.target.value)}
                     disabled={values.isPreset.outside[1] || isCorrect}
                 />
-                <OutsideInput
+                <DreieckInput
                     x={midTop.x + inputOffsets.topRightOutside.x}
                     y={midTop.y + inputOffsets.topRightOutside.y}
                     placeholder={values.outside[2] ?? "?"}
