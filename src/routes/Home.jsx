@@ -7,13 +7,16 @@ import { sumStrategy } from "../solution-strategies/sumStrategy";
 
 export default function Home() {
     const strategies = [
-        { label: "Easy", value: injectEasyMode },
-        { label: "Medium", value: injectMediumMode },
-        { label: "Hard", value: injectHardMode },
-        { label: "Random", value: "random" },
+        { label: "Alles innen", value: injectEasyMode },
+        { label: "1 innen, 2 außen", value: injectMediumMode },
+        { label: "Alles außen", value: injectHardMode },
+        { label: "Gemischt", value: "random" },
     ];
 
+    const maxValues = [5, 10, 20, 50, 100]; // Predefined maxValues for the dropdown
+
     const [selectedStrategy, setSelectedStrategy] = useState(() => injectEasyMode);
+    const [selectedMaxValue, setSelectedMaxValue] = useState(10); // Default maxValue
     const [nextTrigger, setNextTrigger] = useState(0);
 
     const getRandomStrategy = useCallback(() => {
@@ -24,11 +27,11 @@ export default function Home() {
 
     const getCurrentStrategy = useCallback(() => {
         if (selectedStrategy === "random") {
-            return getRandomStrategy();
+            return () => getRandomStrategy()({ maxValue: selectedMaxValue });
         } else {
-            return selectedStrategy;
+            return () => selectedStrategy({ maxValue: selectedMaxValue });
         }
-    }, [selectedStrategy, getRandomStrategy]);
+    }, [selectedStrategy, selectedMaxValue, getRandomStrategy]);
 
     return (
         <div className="flex flex-col items-center justify-center">
@@ -56,13 +59,27 @@ export default function Home() {
                     ))}
                 </select>
 
-                {/* Next Button */}
+                {/* Dropdown to Select Max Value */}
+                <select
+                    className="select select-bordered w-40"
+                    value={selectedMaxValue}
+                    onChange={(e) => setSelectedMaxValue(Number(e.target.value))}
+                >
+                    {maxValues.map((value) => (
+                        <option key={value} value={value}>
+                            Max: {value}
+                        </option>
+                    ))}
+                </select>
+
                 <button
                     className="btn btn-primary"
+                    style={{ color: "#ffffff", fontWeight: "bold" }} // Pure white text with bold font
                     onClick={() => setNextTrigger((prev) => prev + 1)}
                 >
-                    Next
+                    Nächste Aufgabe
                 </button>
+
             </div>
         </div>
     );
