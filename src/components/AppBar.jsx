@@ -54,13 +54,13 @@ export default function AppBar() {
         <div className="absolute top-16 right-4 bg-base-200 rounded shadow-lg z-50 p-3">
           <ul className="menu menu-vertical">
             <li>
-              <Link to="/" onClick={() => setMenuOpen(false)}>
-                Home
+              <Link to="/data-privacy" onClick={() => setMenuOpen(false)}>
+                Datenschutzerklärung
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={() => setMenuOpen(false)}>
-                About
+              <Link to="/imprint" onClick={() => setMenuOpen(false)}>
+                Impressum
               </Link>
             </li>
           </ul>
