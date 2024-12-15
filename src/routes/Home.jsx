@@ -50,6 +50,7 @@ export default function Home() {
                     onChange={(e) => {
                         const selected = strategies.find((s) => s.label === e.target.value);
                         setSelectedStrategy(() => selected?.value);
+                        setNextTrigger((prev) => prev + 1);
                     }}
                 >
                     {strategies.map((strategy) => (
@@ -63,7 +64,10 @@ export default function Home() {
                 <select
                     className="select select-bordered w-40"
                     value={selectedMaxValue}
-                    onChange={(e) => setSelectedMaxValue(Number(e.target.value))}
+                    onChange={(e) => {
+                        setSelectedMaxValue(Number(e.target.value));
+                        setNextTrigger((prev) => prev + 1);
+                    }}
                 >
                     {maxValues.map((value) => (
                         <option key={value} value={value}>
