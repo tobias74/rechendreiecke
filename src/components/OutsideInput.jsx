@@ -16,8 +16,7 @@ export default function OutsideInput({
         <foreignObject x={x} y={y} width={size * 1.3} height={size}>
             <input
                 type="number"
-                className={`w-full h-full text-center input input-bordered rounded-full
-                    }`}
+                className={`w-full h-full text-center input input-bordered rounded-lg`}
                 style={{
                     fontSize: `${fontSize}px`, // Apply responsive font size
                     color: textColor, // Set consistent font color
