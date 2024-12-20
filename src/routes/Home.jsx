@@ -42,10 +42,10 @@ export default function Home() {
             />
 
             {/* Controls Section */}
-            <div className="flex flex-col md:flex-row gap-4 justify-center mt-6">
+            <div className="flex flex-row flex-wrap gap-4 justify-center mt-6">
                 {/* Dropdown to Select Strategy */}
                 <select
-                    className="select select-bordered w-40"
+                    className="select select-bordered w-40 sm:w-32 md:w-40"
                     value={strategies.find((s) => s.value === selectedStrategy)?.label || "Easy"}
                     onChange={(e) => {
                         const selected = strategies.find((s) => s.label === e.target.value);
@@ -62,7 +62,7 @@ export default function Home() {
 
                 {/* Dropdown to Select Max Value */}
                 <select
-                    className="select select-bordered w-40"
+                    className="select select-bordered w-40 sm:w-32 md:w-40"
                     value={selectedMaxValue}
                     onChange={(e) => {
                         setSelectedMaxValue(Number(e.target.value));
@@ -77,14 +77,16 @@ export default function Home() {
                 </select>
 
                 <button
-                    className="btn btn-primary"
-                    style={{ color: "#ffffff", fontWeight: "bold" }} // Pure white text with bold font
+                    className="btn btn-primary w-40 sm:w-full md:w-40"
+                    style={{ color: "#ffffff", fontWeight: "bold" }}
                     onClick={() => setNextTrigger((prev) => prev + 1)}
                 >
                     Nächste Aufgabe
                 </button>
-
             </div>
+
+
+
         </div>
     );
 }
