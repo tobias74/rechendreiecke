@@ -81,7 +81,7 @@ export default function Rechendreieck({
             />
 
             <svg
-                className="max-w-[80vw] max-h-[80vh] w-full h-auto"
+                className="max-w-[70vw] max-h-[70vh] w-full h-auto"
                 viewBox={`0 0 ${boxWidth} ${boxHeight}`}
                 preserveAspectRatio="xMidYMid meet"
             >
