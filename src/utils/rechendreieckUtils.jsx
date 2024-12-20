@@ -39,8 +39,8 @@ export const calculateMidpoints = ({ topVertex, bottomLeft, bottomRight }) => {
 
 export const calculateInputOffsets = () => {
     const sideLength = TRIANGLE_BASE_LINE_LENGTH;
-    const inputWidth = sideLength * 0.09 * 1.3;
-    const inputHeight = sideLength * 0.05;
+    const inputWidth = sideLength * (0.1 * 1.5) * 1.3;
+    const inputHeight = sideLength * 0.10;
     const halfInputWidth = inputWidth / 2;
     const halfInputHeight = inputHeight / 2;
 
