@@ -10,7 +10,7 @@ export default function DreieckInput({
 }) {
     const size = sideLength * 0.15; // 10% of side length
     const fontSize = sideLength * 0.1; // Font size as 5% of side length
-    const textColor = "#1A1A1A"; // Consistent "almost black" color
+    const textColor = "hsl(var(--bc))";
 
     return (
         <foreignObject x={x} y={y} width={size * 1.3} height={size}>
