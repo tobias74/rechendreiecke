@@ -21,7 +21,7 @@ export default function DreieckInput({
                 style={{
                     fontSize: `${fontSize}px`, // Apply responsive font size
                     color: textColor, // Set consistent font color
-                    backgroundColor,
+                    backgroundColor: backgroundColor,
                 }}
                 placeholder={placeholder}
                 onChange={onChange}
