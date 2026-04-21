@@ -10,7 +10,8 @@ export default function DreieckInput({
 }) {
     const size = sideLength * 0.15; // 10% of side length
     const fontSize = sideLength * 0.1; // Font size as 5% of side length
-    const textColor = "hsl(var(--bc))";
+    const textColor = "#1A1A1A";
+    const backgroundColor = "#FFFFFF";
 
     return (
         <foreignObject x={x} y={y} width={size * 1.3} height={size}>
@@ -20,6 +21,7 @@ export default function DreieckInput({
                 style={{
                     fontSize: `${fontSize}px`, // Apply responsive font size
                     color: textColor, // Set consistent font color
+                    backgroundColor,
                 }}
                 placeholder={placeholder}
                 onChange={onChange}
